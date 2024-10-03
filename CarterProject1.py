@@ -75,6 +75,8 @@ if __name__ == '__main__':
 
             text = takeInText()
 
-            print(f"Starting {cipherMethod} Cipher")
+            print(f"Starting {cipherMethod} Cipher.")
+
+            print(text)
 
             startAction(cipherMethod, cipherAction, key, text)
