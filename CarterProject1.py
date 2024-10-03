@@ -16,21 +16,27 @@ def columnarDecrypt(key, encryptedValue):
 def vigenereDecrypt(key, encryptedValue):
     print("Vigenere Decryptor")
 
+def promptCipherToUse():
+    ciphers = ["Keyword", "Columnar", "Vigenere"]
+    for i, cipher in enumerate(ciphers, 1):
+        print(f"{i}.\t {cipher} Cipher")
+    return ciphers[int(input())-1]
+
+def promptAction():
+    cipherOptions = ["Encrypt", "Decrypt"]
+    for i, cipherOption in enumerate(cipherOptions, 1):
+        print(f"{i}.\t {cipherOption}")
+    return cipherOptions[int(input())-1]
+
 if __name__ == '__main__':
 
     print("Please select a cipher to apply:")
 
-    print("1.\t Keyword Cipher")
-    print("2.\t Columnar Cipher")
-    print("3.\t Vigenere Cipher")
-
-    # Take User Input Here
+    cipherMethod = promptCipherToUse()
 
     print("Please select action:")
-    print("1.\t Encrypt")
-    print("2.\t Decrypt")
 
-    # Take User Input Here
+    cipherAction = promptAction()
 
     print("Please provide a keyword:")
 
