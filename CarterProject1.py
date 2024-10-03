@@ -28,31 +28,53 @@ def promptAction():
         print(f"{i}.\t {cipherOption}")
     return cipherOptions[int(input())-1]
 
+def takeKeywordInput():
+    return input()
+
+def takeInText():
+    return input()
+
+def startAction(cipherMethod, cipherAction, key, text):
+    cipherFunctions = {
+        "Keyword": {
+            "Encrypt": keyword,
+            "Decrypt": keywordDecrypt
+        },
+        "Columnar": {
+            "Encrypt": columnar,
+            "Decrypt": columnarDecrypt
+        },
+        "Vigenere": {
+            "Encrypt": vigenere,
+            "Decrypt": vigenereDecrypt
+        }
+    }
+    cipherFunctions[cipherMethod][cipherAction](key, text)
+
+
 if __name__ == '__main__':
 
-    print("Please select a cipher to apply:")
+    while True:
+        exit = input("Press enter to continue or -1 to Exit")
+        if exit == '-1':
+            break
+        else:
+            print("Please select a cipher to apply:")
 
-    cipherMethod = promptCipherToUse()
+            cipherMethod = promptCipherToUse()
 
-    print("Please select action:")
+            print("Please select action:")
 
-    cipherAction = promptAction()
+            cipherAction = promptAction()
 
-    print("Please provide a keyword:")
+            print("Please provide a keyword:")
 
-    # Take User Input here
+            key = takeKeywordInput()
 
-    # make this encipher / decipher
-    print("Please provide a text to encipher")
+            print(f"Please provide a text to {cipherAction.lower()}:")
 
-    # Take User Input HERE
+            text = takeInText()
 
-    print("Starting SELECTED CIPHERE HERE Cipher")
+            print(f"Starting {cipherMethod} Cipher")
 
-    # Print the original message that they want to encipher
-
-    # print the enciphereed text
-
-    # loop until the user exits. i.e enter -1????
-
-
+            startAction(cipherMethod, cipherAction, key, text)
