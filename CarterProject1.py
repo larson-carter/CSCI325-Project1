@@ -1,5 +1,22 @@
 def keyword(key, plaintext):
-    print("Keyword Encryptor")
+
+    # remove the dups from the key
+
+    # make the key input upper case
+
+    # create alphabet string var = "ABC..."
+
+    # create a injected alphabet = "KEYWORD+ABC.... but remove the used chars from key"
+
+    # create empty output var
+
+    # append spliced char to output being uppercase if oriignal plain text slot is uppercase
+    # if it is not upper case then append regular, if it is not ASCII normal then append
+    # iterate thru the entire string
+
+    # print the output
+
+
 
 def columnar(key, plaintext):
     print("Columnar Encryptor")
