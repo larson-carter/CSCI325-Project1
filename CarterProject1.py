@@ -1,16 +1,20 @@
-# This is a sample Python script.
+def keyword(key, plaintext):
+    print("Keyword Encryptor")
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+def columnar(key, plaintext):
+    print("Columnar Encryptor")
 
+def vigenere(key, plaintext):
+    print("Vigenere Encryptor")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def keywordDecrypt(key, encryptedValue):
+    print("Keyword Decryptor")
 
+def columnarDecrypt(key, encryptedValue):
+    print("Columnar Decryptor")
 
-# Press the green button in the gutter to run the script.
+def vigenereDecrypt(key, encryptedValue):
+    print("Vigenere Decryptor")
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print("Hello, World!")
