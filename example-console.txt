@@ -1,0 +1,71 @@
+Example input and output is below:
+Please select a cipher to apply:
+1. Keyword Cipher
+2. Columnar Cipher
+3. Vigenere Cipher
+1
+Please select
+1. Encrypt
+2. Decrypt
+1
+Please provide a keyword
+Whale
+Please provide text to encipher
+Hello! I am testing this program.
+Starting Keyword Cipher
+Hello! I am testing this program.
+Dejjn! F wk sersfmc sdfr oqncqwk.
+
+
+Please select a cipher to apply:
+1. Keyword Cipher
+2. Columnar Cipher
+3. Vigenere Cipher
+2
+Please select
+1. Encrypt
+2. Decrypt
+1
+Please provide a keyword
+Whale
+Please provide text to encipher
+Hello! I am testing this program.
+Starting Columnar Cipher
+Hello! I am testing this program.
+lItnio.oas re ihrml egsgH!mttpa
+
+
+Please select a cipher to apply:
+1. Keyword Cipher
+2. Columnar Cipher
+3. Vigenere Cipher
+3
+Please select
+1. Encrypt
+2. Decrypt
+1
+Please provide a keyword
+Whale
+Please provide text to encipher
+Hello! I am testing this program.
+Starting Vigenere Cipher
+Hello! I am testing this program.
+Dllws! E hm eioaiyk poid tnvgcei.
+
+
+Please select a cipher to apply:
+1. Keyword Cipher
+2. Columnar Cipher
+3. Vigenere Cipher
+3
+Please select
+1. Encrypt
+2. Decrypt
+2
+Please provide a keyword
+Whale
+Please provide text to encipher
+Dllws! E hm eioaiyk poid tnvgcei.
+Starting Vigenere Cipher Decryption
+Dllws! E hm eioaiyk poid tnvgcei.
+Hello! I am testing this program.
