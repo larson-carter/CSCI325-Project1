@@ -51,3 +51,12 @@ class TestCiphers(TestCase):
 
         self.assertEqual(encryptedText, "Dejjn! F wk sersfmc sdfr oqncqwk.", "Keyword cipher encryption failed")
         self.assertEqual(decryptedText, "Hello! I am testing this program.", "Keyword cipher decryption failed")
+
+    def test_columnar_all(self):
+        self.fail()
+
+    def test_vigenere_all(self):
+        self.fail()
+
+    def testAll(self):
+        self.fail()

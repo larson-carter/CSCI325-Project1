@@ -98,7 +98,6 @@ def vigenere(key, plaintext):
     # Print the output var
     return output
 
-
 def keywordDecrypt(key, encryptedValue):
 
     # Remove all of the duplicates from the key while keeping them sorted
@@ -138,7 +137,26 @@ def columnarDecrypt(key, encryptedValue):
     print("Columnar Decryptor")
 
 def vigenereDecrypt(key, encryptedValue):
-    print("Vigenere Decryptor")
+
+    # copy alpha var
+
+    # Take keyboard input and standardize the key to lowercase
+
+    # iterate over the encrypted value to learn where special non-alpha chars are
+    # Store it with an index of the value key to ensure that the key is repeated over the value of text.
+
+    # create temp output var
+
+    # iterate thru encryptedValue with counter
+
+    # if it is non alpha immediately append to output
+
+    # check state and ensure is upper and lower is in place
+
+    # keep in mind the shift and append it to the output (one for upper and one for lower)
+
+    # return output
+    print("OUTPUT")
 
 def promptCipherToUse():
     ciphers = ["Keyword", "Columnar", "Vigenere"]
@@ -174,7 +192,6 @@ def startAction(cipherMethod, cipherAction, key, text):
         }
     }
     return cipherFunctions[cipherMethod][cipherAction](key, text)
-
 
 if __name__ == '__main__':
 
