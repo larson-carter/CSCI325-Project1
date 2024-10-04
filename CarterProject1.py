@@ -29,8 +29,7 @@ def keyword(key, plaintext):
         else:
             output += char
 
-    # print the output
-    print(output)
+    return output
 
 def columnar(key, plaintext):
 
@@ -124,7 +123,7 @@ def startAction(cipherMethod, cipherAction, key, text):
             "Decrypt": vigenereDecrypt
         }
     }
-    cipherFunctions[cipherMethod][cipherAction](key, text)
+    return cipherFunctions[cipherMethod][cipherAction](key, text)
 
 
 if __name__ == '__main__':
@@ -154,4 +153,4 @@ if __name__ == '__main__':
 
             print(text)
 
-            startAction(cipherMethod, cipherAction, key, text)
+            print(startAction(cipherMethod, cipherAction, key, text))
