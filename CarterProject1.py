@@ -1,22 +1,36 @@
 def keyword(key, plaintext):
 
-    # remove the dups from the key
-
-    # make the key input upper case
+    # remove the dups from the key via hash
+    # https://stackoverflow.com/questions/14538885/how-to-get-the-index-with-the-key-in-a-dictionary
+    # Convert data to upper
+    key = "".join(sorted(set(key), key=key.index)).upper()
 
     # create alphabet string var = "ABC..."
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     # create a injected alphabet = "KEYWORD+ABC.... but remove the used chars from key"
+    # NOTE: KEEP FIRST COME FIRST SERVER
+    firstComeFirstServeAlphabet = key + "".join([char for char in alphabet if char not in key])
 
     # create empty output var
+    output = ""
 
-    # append spliced char to output being uppercase if oriignal plain text slot is uppercase
-    # if it is not upper case then append regular, if it is not ASCII normal then append
     # iterate thru the entire string
+    for char in plaintext:
+        #print(char)
+        if char.upper() in alphabet:
+            index = alphabet.index(char.upper())
+            # append spliced char to output being uppercase if oriignal plain text slot is uppercase
+            if char.isupper():
+                output += firstComeFirstServeAlphabet[index].upper()
+            else:
+                # if it is not upper case then append regular, if it is not ASCII normal then append
+                output += firstComeFirstServeAlphabet[index].lower()
+        else:
+            output += char
 
     # print the output
-
-
+    print(output)
 
 def columnar(key, plaintext):
     print("Columnar Encryptor")
@@ -72,7 +86,7 @@ def startAction(cipherMethod, cipherAction, key, text):
 if __name__ == '__main__':
 
     while True:
-        exit = input("Press enter to continue or -1 to Exit")
+        exit = input("Press enter to continue or -1 to Exit\n")
         if exit == '-1':
             break
         else:
