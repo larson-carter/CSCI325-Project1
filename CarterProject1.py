@@ -86,14 +86,12 @@ def vigenere(key, plaintext):
             output += char
         # Find the upper value with the offeset in mind
         if char.isupper():
-            offsetValueOfIndex = alphabet.upper().index(stringReplacedPlainTextOfKey[i].upper())
-            output += alphabet.upper()[(alphabet.upper().index(char) + offsetValueOfIndex) % len(alphabet)]
+            output += alphabet.upper()[(alphabet.upper().index(char) + alphabet.upper().index(stringReplacedPlainTextOfKey[i].upper())) % len(alphabet)]
         # if it is  lowercase then shift up again on the upper alphabet
         # then the new letter same condition
         # then append that char onto the temp output var
         elif char.islower():
-            offsetValueOfIndex = alphabet.index(stringReplacedPlainTextOfKey[i].lower())
-            output += alphabet[(alphabet.index(char) + offsetValueOfIndex) % len(alphabet)]
+            output += alphabet[(alphabet.index(char) + alphabet.index(stringReplacedPlainTextOfKey[i].lower())) % len(alphabet)]
 
     # Print the output var
     return output
@@ -139,24 +137,40 @@ def columnarDecrypt(key, encryptedValue):
 def vigenereDecrypt(key, encryptedValue):
 
     # copy alpha var
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
     # Take keyboard input and standardize the key to lowercase
+    key = key.lower()
 
     # iterate over the encrypted value to learn where special non-alpha chars are
     # Store it with an index of the value key to ensure that the key is repeated over the value of text.
+    stringReplacedCipherTextOfKey = ''
+    indexOfKey = 0
+    for char in encryptedValue:
+        if char.isalpha():
+            stringReplacedCipherTextOfKey += key[indexOfKey % len(key)]
+            indexOfKey += 1
+        else:
+            stringReplacedCipherTextOfKey += char
 
     # create temp output var
+    output = ''
 
     # iterate thru encryptedValue with counter
-
-    # if it is non alpha immediately append to output
-
-    # check state and ensure is upper and lower is in place
-
-    # keep in mind the shift and append it to the output (one for upper and one for lower)
+    for i, char in enumerate(encryptedValue):
+        # if it is non alpha immediately append to output
+        if not char.isalpha():
+            output += char
+        # check state and ensure is upper and lower is in place
+        elif char.isupper():
+            # Decrypt the character by shifting backwards
+            output += alphabet.upper()[(alphabet.upper().index(char) - alphabet.upper().index(stringReplacedCipherTextOfKey[i].upper())) % len(alphabet)]
+        elif char.islower():
+            # Decrypt the character by shifting backwards
+            output += alphabet[(alphabet.index(char) - alphabet.index(stringReplacedCipherTextOfKey[i].lower())) % len(alphabet)]
 
     # return output
-    print("OUTPUT")
+    return output
 
 def promptCipherToUse():
     ciphers = ["Keyword", "Columnar", "Vigenere"]
