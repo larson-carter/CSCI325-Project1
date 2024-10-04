@@ -52,7 +52,6 @@ def columnar(key, plaintext):
     # Print the output
     print("EXIT")
 
-
 def vigenere(key, plaintext):
 
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -99,8 +98,29 @@ def vigenere(key, plaintext):
     # Print the output var
     return output
 
+
 def keywordDecrypt(key, encryptedValue):
-    print("Keyword Decryptor")
+
+    # Remove all of the duplicates from the key while keeping them sorted
+    # Add an indexer value if needed
+
+    # Copy alpha var
+
+    # create dups alphabet with key shifted
+
+    # mashmap the subs and substitue the alpha to normal alphabet
+
+    # temp decrypt var
+
+    # Iterate thru string of input text
+
+    # if is upper then set the new char to it in string but uppercase
+
+    #if it is lower then set the new char to output but lower to preserver case
+
+    # append any non alpha char to the output
+
+    # return the output
 
 def columnarDecrypt(key, encryptedValue):
     print("Columnar Decryptor")
