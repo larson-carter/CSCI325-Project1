@@ -51,9 +51,36 @@ def columnar(key, plaintext):
     # Iterate over the columsn and rows to read the output line by line and store in text output string.
 
     # Print the output
+    print("EXIT")
+
 
 def vigenere(key, plaintext):
-    print("Vigenere Encryptor")
+
+    # Create the alphabet again. (Uppercase)
+    # Create the alphabet but only lower .upper; .lower
+
+    # Convert the key to itself but lowercase (.loewr)
+
+    # create new temp key which is the input key text replacing all of the words
+    # in the plaintext ignore if it is not in the alphabet and ignore if it is a space
+    # still add them to the new string however
+
+    # Create temp var for the output
+
+    # Iterate thru all of the chars
+    # if it is uppercase then bump the key and then add on the new letter make sure it is modded the value of the alphabet length
+    # then append it onto the temo output var
+
+    # if it is  lowercase then shift up again on the upper alphabet
+    # then the new letter same condition
+    # then append that char onto the temp output var
+
+    # If it is neither uppercase or lowercase (meaning it is special char or space)
+    # then simply output that into the temp var.
+
+    # Print the output var
+
+    print("EXIT")
 
 def keywordDecrypt(key, encryptedValue):
     print("Keyword Decryptor")
