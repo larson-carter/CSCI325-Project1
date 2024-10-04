@@ -55,31 +55,49 @@ def columnar(key, plaintext):
 
 def vigenere(key, plaintext):
 
-    # Create the alphabet again. (Uppercase)
-    # Create the alphabet but only lower .upper; .lower
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
     # Convert the key to itself but lowercase (.loewr)
+    key = key.lower()
 
     # create new temp key which is the input key text replacing all of the words
     # in the plaintext ignore if it is not in the alphabet and ignore if it is a space
     # still add them to the new string however
+    stringReplacedPlainTextOfKey = ''
+    indexOfKey = 0
+    for i in plaintext:
+        # https://www.toppr.com/guides/python-guide/references/methods-and-functions/methods/string/isalpha/python-string-isalpha/#:~:text=To%20check%20if%20all%20the,If%20not%2C%20it%20returns%20False.
+        if i.isalpha():
+            stringReplacedPlainTextOfKey += key[indexOfKey % len(key)]
+            indexOfKey += 1
+        else:
+            stringReplacedPlainTextOfKey += i
 
     # Create temp var for the output
+    output = ''
 
     # Iterate thru all of the chars
-    # if it is uppercase then bump the key and then add on the new letter make sure it is modded the value of the alphabet length
+    # if it is uppercase then bump the key and then add on the new letter
+    # make sure it is modded the value of the alphabet length
     # then append it onto the temo output var
-
-    # if it is  lowercase then shift up again on the upper alphabet
-    # then the new letter same condition
-    # then append that char onto the temp output var
-
-    # If it is neither uppercase or lowercase (meaning it is special char or space)
-    # then simply output that into the temp var.
+    for i, char in enumerate(plaintext):
+        # If it is not upper or lower (meaning it is special char or space)
+        # then simply output that into the temp var.
+        if not char.isalpha():
+            output += char
+        # Find the upper value with the offeset in mind
+        if char.isupper():
+            offsetValueOfIndex = alphabet.upper().index(stringReplacedPlainTextOfKey[i].upper())
+            output += alphabet.upper()[(alphabet.upper().index(char) + offsetValueOfIndex) % len(alphabet)]
+        # if it is  lowercase then shift up again on the upper alphabet
+        # then the new letter same condition
+        # then append that char onto the temp output var
+        elif char.islower():
+            offsetValueOfIndex = alphabet.index(stringReplacedPlainTextOfKey[i].lower())
+            output += alphabet[(alphabet.index(char) + offsetValueOfIndex) % len(alphabet)]
 
     # Print the output var
-
-    print("EXIT")
+    return output
 
 def keywordDecrypt(key, encryptedValue):
     print("Keyword Decryptor")
