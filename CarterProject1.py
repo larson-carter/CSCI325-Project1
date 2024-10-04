@@ -33,7 +33,24 @@ def keyword(key, plaintext):
     print(output)
 
 def columnar(key, plaintext):
-    print("Columnar Encryptor")
+
+    # Remove the spaces from the input text
+
+    # Calculate the number of rows that are required according to the formula
+
+    # Create 2 d array grid
+
+    # Sort the values of the key alphabetically
+
+    # Reorder all of the columns based on the alpha order of the key itself.
+
+    # Read the Grid Column-by-Column
+
+    # Create output string
+
+    # Iterate over the columsn and rows to read the output line by line and store in text output string.
+
+    # Print the output
 
 def vigenere(key, plaintext):
     print("Vigenere Encryptor")
