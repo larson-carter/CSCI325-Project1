@@ -103,24 +103,36 @@ def keywordDecrypt(key, encryptedValue):
 
     # Remove all of the duplicates from the key while keeping them sorted
     # Add an indexer value if needed
+    key = "".join(sorted(set(key), key=key.index)).upper()
 
     # Copy alpha var
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-    # create dups alphabet with key shifted
+    # create dups alphabet with key shifted with no Dups
+    firstComeFirstServeAlphabet = key + "".join([char for char in alphabet if char not in key])
 
     # mashmap the subs and substitue the alpha to normal alphabet
+    cryptedHashAlpha = {modifiedChar: normalAlphaChar for modifiedChar, normalAlphaChar in zip(firstComeFirstServeAlphabet, alphabet)}
 
     # temp decrypt var
+    output = ""
 
     # Iterate thru string of input text
-
-    # if is upper then set the new char to it in string but uppercase
-
-    #if it is lower then set the new char to output but lower to preserver case
-
-    # append any non alpha char to the output
+    for char in encryptedValue:
+        if char.upper() in cryptedHashAlpha:
+            decrypted_char = cryptedHashAlpha[char.upper()]
+            if char.isupper():
+                # if is upper then set the new char to it in string but uppercase
+                output += decrypted_char.upper()
+            else:
+                # if it is lower then set the new char to output but lower to preserver case
+                output += decrypted_char.lower()
+        else:
+            # append any non alpha char to the output
+            output += char
 
     # return the output
+    return output
 
 def columnarDecrypt(key, encryptedValue):
     print("Columnar Decryptor")
