@@ -48,15 +48,22 @@ class TestCiphers(TestCase):
     def test_keyword_all(self):
         encryptedText = keyword("Whale", "Hello! I am testing this program.")
         decryptedText = keywordDecrypt("Whale", encryptedText)
-
-        self.assertEqual(encryptedText, "Dejjn! F wk sersfmc sdfr oqncqwk.", "Keyword cipher encryption failed")
-        self.assertEqual(decryptedText, "Hello! I am testing this program.", "Keyword cipher decryption failed")
+        self.assertEqual(encryptedText,"Dejjn! F wk sersfmc sdfr oqncqwk.","Keyword cipher encryption failed")
+        self.assertEqual(decryptedText,"Hello! I am testing this program.","Keyword cipher decryption failed")
 
     def test_columnar_all(self):
-        self.fail()
+        encryptedText = columnar("Whale", "Hello! I am testing this program.")
+        decryptedText = columnarDecrypt("Whale", encryptedText)
+        self.assertEqual(encryptedText,"lItnio.oas re ihrml egsgH!mttpa","Columnar cipher encryption failed")
+        self.assertEqual(decryptedText,"Hello! I am testing this program.","Columnar cipher decryption failed")
 
     def test_vigenere_all(self):
-        self.fail()
+        encryptedText = vigenere("Whale", "Hello! I am testing this program.")
+        decryptedText = vigenereDecrypt("Whale", encryptedText)
+        self.assertEqual(encryptedText,"Dllws! E hm eioaiyk poid tnvgcei.","Vigenere cipher encryption failed")
+        self.assertEqual(decryptedText,"Hello! I am testing this program.","Vigenere cipher decryption failed")
 
     def testAll(self):
-        self.fail()
+        self.test_keyword_all()
+        self.test_columnar_all()
+        self.test_vigenere_all()
